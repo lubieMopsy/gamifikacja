@@ -46,7 +46,8 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "build/index.html": "src/*.jade"
+          "build/index.html": "src/index.jade",
+          "build/index_test.html": "src/index_test.jade"
         }
       }
     },
@@ -59,7 +60,8 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files 
-          'build/release/index.html': 'build/index.html',     // 'destination': 'source' 
+          'build/release/index.html': 'build/index.html',
+          'build/release/index_test.html': 'build/index_test.html'     // 'destination': 'source' 
         }
       }
     },
