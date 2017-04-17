@@ -1,0 +1,17 @@
+@nice-blue: #5B83AD;
+@shit-black: black;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation:    @name @duration @delay @ease;
+	-ms-animation:     @name @duration @delay @ease;
+}
+
+.background {
+	background-color: @shit-black;
+}
