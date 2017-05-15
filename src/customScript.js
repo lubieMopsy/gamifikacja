@@ -1,4 +1,3 @@
-
 //CREATE COOKIE
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -64,4 +63,81 @@ function askForName() {
     if (userName === "") {
         userName = prompt("Please share with us Your name, so we can know You better ;)\n ..and save your progress!", "");
     }
+}
+
+// CODING ACHIEVMENTS INTO NUMBER
+var dummy = "235612-345690-234564";
+var dummy2 = 63;
+
+// covert to binary
+function con2bin(decNo) {
+    var num = Number(decNo);
+
+    if(num>= 0) {
+        return num.toString(2);
+    }
+    else {
+        return (~num).toString(2);
+    }
+}
+function alertNo() {
+    var dummyNo = document.getElementById("dummyNo").value;
+    alert("Your number was: " + dummyNo + "; It has deen converted to: " + con2bin(dummyNo));
+}
+// convert to decimal
+function con2dec(binNo) {
+    var num = parseInt(binNo,2);
+
+    if(num>= 0) {
+        return num.toString(10);
+    }
+    else {
+        return (~num).toString(10);
+    }
+}
+function alertBinNo() {
+    var dummyNo = document.getElementById("dummyBinNo").value;
+    alert("Your number was: " + dummyNo + "; It has deen converted to: " + con2dec(dummyNo));
+}
+
+//decode progress code
+function progCd2bin(progCode) {
+    var partStr;
+    var binProgCode = "";
+        for(var i = 0; i < progCode.length; i++) {
+                partStr = progCode.substring(i,i+2);
+                binProgCode += con2bin(partStr) + ".";
+                
+                if (progCode.charAt(i) === "-") {
+
+                    binProgCode.slice(0, -1); //?? nie chce usuwac kropek z ostatnich
+                    binProgCode += "-";
+                }
+                i = i + 1;
+            
+         }
+         binProgCode = binProgCode.slice(0, -1);        
+         return(binProgCode);
+}
+
+function alertProgCode() {
+    var dummyNo = document.getElementById("dummyProgCode").value;
+    alert("Your number was: " + dummyNo + "; It has deen converted to: " + progCd2bin(dummyNo));
+}
+
+//code progress code
+function progCd2dec(progCode) {
+    var partStr;
+    var decProgCode = "";
+        for(var i = 0; i < progCode.length; i++) {
+                partStr = progCode.substring(i,i+6);
+                decProgCode += con2dec(partStr);
+                
+                if (progCode.charAt(i + 6) === "-") {
+                    decProgCode += "-";
+                }
+                i = i + 6;
+            
+         }      
+         return(decProgCode);
 }

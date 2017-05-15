@@ -9,8 +9,8 @@ html(lang="en")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    meta(name="description" content="mmi framework and library")
-    meta(name="author" content="Mateusz Mielcarek")
+    meta(name="description" content="projekt do pracy magisterskiej Marta Smektala")
+    meta(name="author" content="Marta Smektala")
 
     title = gamifikacja
 
@@ -30,7 +30,21 @@ html(lang="en")
       form(action="")
         p Paste your progress code here: <input type="text" id="progCodeInput">
       input(type="submit" value="Submit your progress code" onclick="readProgCode()")
+
+    div
+      form(action="")
+        p Paste decimal number here: <input type="text" id="dummyNo">
+      input(type="submit" value="Submit your decimal number" onclick="alertNo()")
  
+    div
+      form(action="")
+        p Paste decimal number here: <input type="text" id="dummyBinNo">
+      input(type="submit" value="Submit your binary number" onclick="alertBinNo()")
+
+    div
+      form(action="")
+        p Paste decimal number here: <input type="text" id="dummyProgCode">
+      input(type="submit" value="Submit your binary number" onclick="alertProgCode()")
 
     //custom JS
     script(src="project.min.js")
