@@ -5,7 +5,6 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
 //READ PARAMETER FROM COOKIE
 function getCookie(cname) {
     var name = cname + "=";
@@ -22,7 +21,6 @@ function getCookie(cname) {
     }
     return "";
 }
-
 //ASK FOR NAME AND CODE
 // function checkUser() {
 //     var username = getCookie("username");
@@ -36,14 +34,13 @@ function getCookie(cname) {
 //     }
 // }
 
-//READ USER PROGRESS CODE
+//READ USER PROGRESS CODE FROM COOKIE
 function readProgCode() {
     var oldUserProgCodeVal = getCookie("progCode");
     var userProgCodeVal = document.getElementById("progCodeInput").value;
     alert("Your progress code: " + userProgCodeVal + " has been sucesfully loaded." + "\nOld code was: " + oldUserProgCodeVal);
     setCookie("progCode", userProgCodeVal, 10);
 }
-
 //READ USER NAME
 function readUserName() {
     var oldUserName = getCookie("userName");
@@ -55,7 +52,6 @@ function readUserName() {
     }
     setCookie("userName", userName, 10);
 }
-
 // ASK FOR NAME, WHEN FIRST ARTICLE CLICKED
 //button(onclick="")
 function askForName() {
@@ -64,10 +60,7 @@ function askForName() {
         userName = prompt("Please share with us Your name, so we can know You better ;)\n ..and save your progress!", "");
     }
 }
-
 // CODING ACHIEVMENTS INTO NUMBER
-var dummy = "235612-345690-234564";
-var dummy2 = 63;
 
 // covert to binary
 function con2bin(decNo) {
@@ -99,32 +92,30 @@ function alertBinNo() {
     var dummyNo = document.getElementById("dummyBinNo").value;
     alert("Your number was: " + dummyNo + "; It has deen converted to: " + con2dec(dummyNo));
 }
-
 //decode progress code
 function progCd2bin(progCode) {
     var partStr;
     var binProgCode = "";
         for(var i = 0; i < progCode.length; i++) {
                 partStr = progCode.substring(i,i+2);
-                binProgCode += con2bin(partStr) + ".";
-                
                 if (progCode.charAt(i) === "-") {
-
-                    binProgCode.slice(0, -1); //?? nie chce usuwac kropek z ostatnich
+                    binProgCode = binProgCode.slice(0, -1);
                     binProgCode += "-";
+                    i = i - 1;
+                } else {
+                    binProgCode += con2bin(partStr);
+                    binProgCode += ".";
                 }
                 i = i + 1;
-            
          }
-         binProgCode = binProgCode.slice(0, -1);        
+         binProgCode = binProgCode.slice(0, -1);
+       
          return(binProgCode);
 }
-
 function alertProgCode() {
     var dummyNo = document.getElementById("dummyProgCode").value;
     alert("Your number was: " + dummyNo + "; It has deen converted to: " + progCd2bin(dummyNo));
 }
-
 //code progress code
 function progCd2dec(progCode) {
     var partStr;
