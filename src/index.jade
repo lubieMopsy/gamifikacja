@@ -14,23 +14,55 @@ html(lang="en")
 
     title = gamifikacja
 
-    //main CSS file
-    link(href="style.min.css" rel="stylesheet")
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
 
+    //main CSS file
+    link(href="style.min.css" rel="stylesheet")   
+    
+
+        
     //- //jquery
     //- script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
 
   body
-    div
-      form(action="")
-        p Hey there! What's Your name? <input type="text" id="userNameInput">
-      input(type="submit" value="Submit your name" onclick="readUserName()")
+    section(class='first') 
+      div(class='row text-center')
+        div(class='col-sm-12')
+          h1 Title title title
+          h4 Opis do tytulu
+          button.btn(type='button' class='main_btn' href='/gamification.html') Zobacz blogi!
 
-    div
-      form(action="")
-        p Paste your progress code here: <input type="text" id="progCodeInput">
-      input(type="submit" value="Submit your progress code" onclick="readProgCode()")
- 
+    section(class='second')  
+      div(class='row')
+        h1 Title title title
+        div(class='col-sm-4 pagination-centered')
+          img(src='img/icon1.png', alt='icon first' class='icons')
+          h4 Opis do tytulu
+        div(class='col-sm-4')
+          img(src='img/icon2.png', alt='icon first' class='icons')
+          h4 Opis do tytulu
+        div(class='col-sm-4')
+          img(src='img/icon3.png', alt='icon first' class='icons')
+          h4 Opis do tytulu
 
+  section(class='third') 
+    div(class='row text-center')
+      div(class='col-sm-12')
+        h1 Title title title
+        h4 Opis do tytulu
+        button.btn(type='button', class='btn_third') Basic
+
+  section(class='fourth') 
+    div(class='row text-center')
+      div(class='col-sm-6')
+        h4 Title title title
+        h4 Opis do tytulu
+      div(class='col-sm-6')
+        h4 Title title title
+        h4 Opis do tytulu
+
+    // Latest compiled and minified JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
     //custom JS
     script(src="project.min.js")

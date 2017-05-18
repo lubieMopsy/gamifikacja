@@ -47,7 +47,10 @@ module.exports = function(grunt) {
         },
         files: {
           "build/index.html": "src/index.jade",
-          "build/index_test.html": "src/index_test.jade"
+          "build/index_test.html": "src/index_test.jade",
+          "build/blogs.html": "src/blogs.jade",
+          "build/gamification.html": "src/gamification.jade"
+
         }
       }
     },
@@ -61,7 +64,9 @@ module.exports = function(grunt) {
         },
         files: {                                   // Dictionary of files 
           'build/release/index.html': 'build/index.html',
-          'build/release/index_test.html': 'build/index_test.html'     // 'destination': 'source' 
+          'build/release/index_test.html': 'build/index_test.html',
+          'build/release/blogs.html': 'build/blogs.html',
+          'build/release/gamification.html': 'build/gamification.html' // 'destination': 'source' 
         }
       }
     },
