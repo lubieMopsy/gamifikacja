@@ -6852,6 +6852,14 @@ button.close {
   font-family: Technical_font_hand;
   src: url(../../fonts/EngineerHand.ttf);
 }
+@font-face {
+  font-family: font_awesome;
+  src: url(../../fonts/fontawesome-webfont.ttf);
+}
+@font-face {
+  font-family: Lato_black;
+  src: url(../../fonts/Lato-Black.ttf);
+}
 .first {
   background: #FECD51;
   color: white;
@@ -7083,6 +7091,9 @@ label {
   -moz-box-shadow: 9px 10px 77px -8px #857e85;
   box-shadow: 9px 10px 77px -8px #857e85;
   padding: 20px 20px 20px 20px;
+}
+.blog h4 {
+  color: black;
 }
 .secondG h4 {
   color: black;
