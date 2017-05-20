@@ -26,14 +26,35 @@
     src: url(../../fonts/Lato-Black.ttf);
 }
 @font-face {
-    font-family: Lato_regular
+    font-family: Lato_regular;
     src: url(../../fonts/Lato-Regular.ttf);
 }
 @font-face {
-    font-family: Lato_light
+    font-family: Lato_light;
     src: url(../../fonts/Lato-Light.ttf);
 }
 // ----------------------SECTION FIRST
+
+.header {
+  background: #9F1E49;
+  color:white;
+  height: 90px;
+}
+.header h1 {
+  font-size: 18px;
+}
+.header h2 {
+  font-size: 12px;
+}
+.logo {
+  margin-top: 16px;
+  font-size: 40px;
+  color: white;
+}
+.logo:hover {
+  color: #cf8ea4;
+  text-decoration: none;
+}
 .first {
     background: #FECD51;
     color:white;
@@ -41,16 +62,21 @@
     background-image: url(img/background.png);
 }
 
-h1 { 
+.first h1 { 
     text-align: center;
     color:white;
     margin-top:80px;
     font-family: Lato, sans-serif;
+    margin-bottom: 20px
 }
-h4 { 
+.gifts h4 { 
     text-align: center;
-    color:white;
-    font-family: Lato-light, sans-serif;
+    font-family: Lato-regular, sans-serif;
+    color: #cba433;
+    margin-top: 20px;
+}
+.gifts h4:hover {
+  color: #9F1E49;
 }
 .first h1 { 
     margin-top:170px;
@@ -68,28 +94,32 @@ h4 {
     -webkit-box-shadow: 9px 10px 77px -8px rgba(94,15,42,1);
     -moz-box-shadow: 9px 10px 77px -8px rgba(94,15,42,1);
     box-shadow: 9px 10px 77px -8px rgba(94,15,42,1);
-    height: 40px;
+    height: 50px;
     width: 250px;
     font-size: 1.2em;
     font-family: Lato, sans-serif;
 }
-.btn:hover {
+.main_btn:hover {
     box-shadow:none;
     transition-duration: width 5s;
-    color:white;
+    color:#cf8ea4;
 }
 
-.btn:focus { outline:0 !important; color:white; }
+.btn:focus { outline:0 !important; color: #cf8ea4; }
 // ----------------------SECTION SECOND
 .second {
     background: #F2F2F2;
-    height: 500px;
+    height: 550px;
 }
 .second h1 {
     color: #2F1B41;
+    text-align: center;
+    margin-top: 80px;
 }
 .second h4 {
     color: #2F1B41;
+    text-align: center;
+    margin-top: 40px;
 }
 .icons {
     height: 200px;
@@ -107,6 +137,11 @@ h4 {
     background: #9F1E49;
     height: 300px;
 }
+.third h1 {
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
 .btn_third {
     background: #FECD51;
     margin-bottom: 80px;
@@ -117,57 +152,81 @@ h4 {
     -moz-box-shadow: 9px 10px 77px -8px rgba(94,15,42,1);
     box-shadow: 9px 10px 77px -8px rgba(94,15,42,1);
     color:#2F1B41;
+    height: 50px;
+    font-size: 1.2em;
+    font-family: Lato;
 }
-.btn:hover {
+.btn_third:hover {
     box-shadow:none;
     transition-duration: width 5s;
-    color:#2F1B41
+    color:#cba433;
 }
 // ----------------------SECTION FOURTH
 .fourth {
     background: #2F1B41;
-    height: 300px;
+    height: 250px;
 }
 
 .fourth h1, .fourth h4 {
     text-align: left;
     padding-left: 80px;
+    opacity:0.5;
 }
 // // --------------------------------------GAMIFICATION PAGE
+.body {
+  background: white;
+}
+
 .firstG {
     background: #FECD51;
     color:white;
-    height: 300px;
+    height: 320px;
 }
-.firstG h4 {
-    color: #2F1B41;;
+.gifts {
+  margin-bottom: 25px;
+  height: 100px;
+  margin-top: 80px;
+  font-size: 80px;
+  color: #cba433;
+  opacity: 0.5;
 }
+.gifts:hover {
+  opacity:1;
+  color: #9F1E49;
+}
+// .firstG h4 {
+//     color: #2F1B41;;
+//     position:absolute;
+//     text-align: center;
+// }
 .gift {
     height: 100px;
     margin-top: 80px;
 }
 
-
-
-
 html, body {
   width: 100%;
+  color:white;
 }
-
 .firstG h1 {
   font-size: 26px;
-  background: $cyan;
   color: black;
   padding: 40px 0 100px 20%;
   margin-bottom: 50px;
 }
-
-/* @mixin tabs {
-  @for $i from 1 through 4 {
+.title h2 {
+  text-align: center;
+  font-family: Lato-regular;
+  font-size: 32px;
+  opacity:0.1;
+}
+/*
+@mixin tabs {
+  @for $i from 1 through 3 {
     &:nth-of-type(#{$i}) {
       &:checked {
         ~ .slide {
-          left: calc((100% / 4) * #{$i - 1});
+          left: calc((100% / #{3}) * #{$i - 1});
         }
       }
     }
@@ -176,7 +235,7 @@ html, body {
 */
 
 label, p, a, h1, div {
-  font-family: Roboto, sans-serif;
+  font-family: Lato-regular, sans-serif;
 }
 
 .tab-wrap {
@@ -193,7 +252,7 @@ input[type="radio"][name="tabs"] {
   &:checked {
     + .tab-label-content {
       label {
-        color: black;
+        color: #9F1E49;
       }
       .tab-content {
         display: block;
@@ -201,7 +260,7 @@ input[type="radio"][name="tabs"] {
       }
     }
   }
-  @include tabs;
+  @include tabs; 
   &:first-of-type {
     &:checked {
       ~ .slide {
@@ -213,7 +272,7 @@ input[type="radio"][name="tabs"] {
 
 label {
   cursor: pointer;
-  color: rgba(0,0,0,0.8);
+  color: #cba433;
   background-color: $cyan;
   box-sizing: border-box;
   display: inline-flex;
@@ -225,16 +284,16 @@ label {
   width: 100%;
 }
 
-.slide {
-  background: purple;
-  width: calc(100% / 4);
+/* .slide {
+  background: #9F1E49;
+  width: calc(100% / 3);
   height: 4px;
   position: absolute;
   left: 0;
   top: calc(100% - 4px);
   transition: left 0.3s ease-out;
 }
-
+*/
 .tab-label-content {
   width: 100%;
    color:black;
@@ -261,11 +320,11 @@ label {
 
 //------------------- SECTION2 
 .space {
-  margin-top: 128px;
+  margin-top: 160px;
 }
 .br_class {
-  margin-top:80px;
-  margin-bottom:60px;
+  margin-top:5%;
+  margin-bottom:25%;
 }
 .secondG {
     background: #F2F2F2;
@@ -276,7 +335,39 @@ label {
   width: 50%;
 	height: 250px;
   background: lightgreen;
-
+}
+.rating2 {
+  position: absolute;
+  width: 50%;
+	height: 250px;
+  background: #65d565;
+}
+.rating3 {
+  position: absolute;
+  width: 50%;
+	height: 250px;
+  background: #3cb43c;
+}
+.rating h4 {
+    font-size: 18px;
+    text-align: center;
+    font-family: Lato-regular;
+    opacity: 0.5;
+    margin-top:15px;
+}
+.rating2 h4 {
+    font-size: 18px;
+    text-align: center;
+    font-family: Lato-regular;
+    opacity: 0.5;
+    margin-top:15px;
+}
+.rating3 h4 {
+    font-size: 18px;
+    text-align: center;
+    font-family: Lato-regular;
+    opacity: 0.5;
+    margin-top:15px;
 }
 .blog {
   position: absolute;
@@ -288,8 +379,46 @@ label {
   box-shadow: 9px 10px 77px -8px rgba(133,126,133,1);
   padding: 20px 20px 20px 20px;
 }
+.blog:hover {
+  box-shadow: 9px 10px 77px -8px  rgba(192,186,192,0.9);
+  transition-duration: width 9s;
+}
 .blog h4 {
-  color:black;
+  color: #2F1B41;
+  position:absolute;
+  text-align: center;
+}
+.blog p {
+  color: #2F1B41;
+  font-family:Lato-regular;
+  text-align: center;
+}
+.font-awes i {
+  font-size: 32px;
+  color: #90ee90;
+  margin-left: 80%;
+  margin-bottom: 5px;
+}
+.font-awes2 i {
+  font-size: 32px;
+  color: #65d565;
+  margin-left: 80%;
+  margin-bottom: 5px;
+}
+.font-awes3 i {
+  font-size: 32px;
+  color: #3cb43c;
+  margin-left: 80%;
+  margin-bottom: 5px;
+}
+.font-awes i:hover {
+  color: #F2F2F2;
+}
+.font-awes2 i:hover {
+  color: #F2F2F2;
+}
+.font-awes3 i:hover {
+  color: #F2F2F2;
 }
 .secondG h4 {
   color:black;
@@ -298,7 +427,7 @@ label {
   padding-top: 20px;
 }
 .btn_gamification {
-  margin: 25%;
+  margin-top:20%;
 }
 .gam_btn {
     background: #9F1E49;
@@ -331,7 +460,28 @@ label {
     position: relative;
 }
 
+.gam_btn:hover {
+  color: #cf8ea4;
+}
+.gam_btn2:hover {
+  color: #cba433;
+}
 
+.fourthG {
+    background: #2F1B41;
+    height: 300px;
+    margin-top: 80%;
+}
+
+.fourthG h1, .fourthG h4 {
+    text-align: left;
+    padding-left: 80px;
+    opacity:0.5;
+
+}
+.fourthG2 {
+    margin-top: 30px;
+}
 
 
 
