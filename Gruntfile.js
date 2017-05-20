@@ -11,7 +11,7 @@ module.exports = function(grunt) {
           paths: ['assets/css']
         },
         files: {
-          'build/style.css': ['bootstrap.min.css', 'src/style.less']
+          'build/style.css': ['src/bootstrap.css', 'src/style.less']
         }
       },
       production: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           paths: ['assets/css'],
         },
         files: {
-          'build/style.css': ['bootstrap.min.css', 'src/style.less']
+          'build/style.css': ['src/bootstrap.css', 'src/style.less']
         }
       }
     },
