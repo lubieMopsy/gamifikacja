@@ -1,0 +1,255 @@
+html(lang="en")
+  // Variables
+  - var tabLength = 200;
+  - var tabHeight = 40;
+  - var arrowLength = 15
+  - var arrowHeight = 4
+  //Site
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="mmi framework and library")
+    meta(name="author" content="Mateusz Mielcarek")
+
+    title = gamifikacja
+
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+
+    //main CSS file
+    link(href="style.min.css" rel="stylesheet")   
+    
+
+        
+    //- //jquery
+    //- script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+
+  body
+    section(class='firstG') 
+      div(class='row text-center')
+        div(class='col-sm-12')
+          div(class='row text-center')
+            div(class='col-sm-2')
+             img(src='img/1.png', alt='icon first' class='gift') 
+             h4 Opis do tytulu
+            div(class='col-sm-2')
+              img(src='img/1.png', alt='icon first' class='gift')
+              h4 Opis do tytulu 
+            div(class='col-sm-2')
+              img(src='img/1.png', alt='icon first' class='gift') 
+              h4 Opis do tytulu
+            div(class='col-sm-2')
+              img(src='img/1.png', alt='icon first' class='gift') 
+              h4 Opis do tytulu
+            div(class='col-sm-2')
+              img(src='img/1.png', alt='icon first' class='gift') 
+              h4 Opis do tytulu
+            div(class='col-sm-2')
+            img(src='img/1.png', alt='icon first' class='gift') 
+            h4 Opis do tytulu
+          div(class='space')
+            .tab-wrap
+              input#tab1(type='radio', name='tabs', checked='')
+              #tab1-content.tab-label-content
+                label(for='tab1') Tab 1
+                .tab-content
+                        div(class='row br_class')
+                          div(class='col-sm-2')
+                            div(class='rating')
+                          div(class='col-sm-10')
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') ZZZZZZ
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') ZZZZZZZ
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+              input#tab2(type='radio', name='tabs')
+              #tab2-content.tab-label-content
+                label(for='tab2') Tab 2
+                .tab-content
+                        div(class='row br_class')
+                          div(class='col-sm-2')
+                            div(class='rating')
+                          div(class='col-sm-10')
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') YYYYYYYY
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') YYYYYYY
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+              input#tab3(type='radio', name='tabs')
+              #tab3-content.tab-label-content
+                label(for='tab3') Tab 3
+                .tab-content
+                        div(class='row br_class')
+                          div(class='col-sm-2')
+                            div(class='rating')
+                          div(class='col-sm-10')
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') WWWWWW
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') WWWWWWW
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                            div(class='col-sm-3')
+                              div(class='blog')
+                              h4 Opis do tytulu
+                              div(class='btn_gamification')
+                                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+              input#tab4(type='radio', name='tabs')
+              .slide
+
+
+
+//-
+    section(class='secondG')  
+      div(class='row br_class')
+        div(class='col-sm-2')
+          div(class='rating')
+        div(class='col-sm-10')
+          div(class='col-sm-3')
+            div(class='blog')
+            h4 Opis do tytulu
+            div(class='btn_gamification')
+              button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+          div(class='col-sm-3')
+            div(class='blog')
+            h4 Opis do tytulu
+            div(class='btn_gamification')
+              button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+          div(class='col-sm-3')
+            div(class='blog')
+            h4 Opis do tytulu
+            div(class='btn_gamification')
+              button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+          div(class='col-sm-3')
+            div(class='blog')
+            h4 Opis do tytulu
+            div(class='btn_gamification')
+              button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+      div(class='row br_class')
+          div(class='col-sm-2')
+            div(class='rating')
+          div(class='col-sm-10')
+            div(class='col-sm-3')
+              div(class='blog')
+              h4 Opis do tytulu
+              div(class='btn_gamification')
+                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+            div(class='col-sm-3')
+              div(class='blog')
+              h4 Opis do tytulu
+              div(class='btn_gamification')
+                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+            div(class='col-sm-3')
+              div(class='blog')
+              h4 Opis do tytulu
+              div(class='btn_gamification')
+                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+            div(class='col-sm-3')
+              div(class='blog')
+              h4 Opis do tytulu
+              div(class='btn_gamification')
+                button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+      div(class='row br_class')
+          div(class='col-sm-2')
+                div(class='rating')
+              div(class='col-sm-10')
+                div(class='col-sm-3')
+                  div(class='blog')
+                  h4 Opis do tytulu
+                  div(class='btn_gamification')
+                    button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                    button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                div(class='col-sm-3')
+                  div(class='blog')
+                  h4 Opis do tytulu
+                  div(class='btn_gamification')
+                    button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                    button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                div(class='col-sm-3')
+                  div(class='blog')
+                  h4 Opis do tytulu
+                  div(class='btn_gamification')
+                    button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                    button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                div(class='col-sm-3')
+                  div(class='blog')
+                  h4 Opis do tytulu
+                  div(class='btn_gamification')
+                    button.btn(type='button' class='gam_btn' href='/gamification.html') Zobacz blogi!
+                    button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+
+-//
+//-
+    section(class='fourth') 
+      div(class='row text-center')
+        div(class='col-sm-6')
+          h4 Title title title
+          h4 Opis do tytulu
+        div(class='col-sm-6')
+          h4 Title title title
+          h4 Opis do tytulu
+-//
+    // Latest compiled and minified JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    //custom JS
+    script(src="project.min.js")

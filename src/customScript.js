@@ -34,7 +34,11 @@ function getCookie(cname) {
 //     }
 // }
 
+<<<<<<< HEAD
 //READ AND WRITE USER PROGRESS CODE FROM INPUT
+=======
+//READ USER PROGRESS CODE FROM COOKIE
+>>>>>>> origin/marta
 function readProgCode() {
     var userProgCodeVal = document.getElementById("progCodeInput").value;
     writeProgCode(userProgCodeVal);
@@ -61,7 +65,6 @@ function writeProgCode(progCode) {
         setCookie("progCode", progCode, 10);
     }
 }
-
 //READ USER NAME
 function readUserName() {
     var oldUserName = getCookie("userName");
@@ -120,6 +123,7 @@ function progCd2bin(progCode) {
         for(var i = 0; i < progCode.length; i++) {
                 partStr = progCode.substring(i,i+2);
                 if (progCode.charAt(i) === "-") {
+<<<<<<< HEAD
                     i = i - 1;
                 } else {
                     var addTemp = con2bin(partStr);
@@ -132,6 +136,19 @@ function progCd2bin(progCode) {
                 }
                 i = i + 1;
          }       
+=======
+                    binProgCode = binProgCode.slice(0, -1);
+                    binProgCode += "-";
+                    i = i - 1;
+                } else {
+                    binProgCode += con2bin(partStr);
+                    binProgCode += ".";
+                }
+                i = i + 1;
+         }
+         binProgCode = binProgCode.slice(0, -1);
+       
+>>>>>>> origin/marta
          return(binProgCode);
 }
 function alertProgCode() {
@@ -142,6 +159,7 @@ function alertProgCode() {
 function progCd2dec(progCode) {
     var partStr;
     var decProgCode = "";
+<<<<<<< HEAD
 
     for(var i = 0; i < progCode.length; i++) {                        
         if (i*2 % 36 === 0 && i>1) {
@@ -181,3 +199,17 @@ function complete(x) {
 }  
 
 //asdasda
+=======
+        for(var i = 0; i < progCode.length; i++) {
+                partStr = progCode.substring(i,i+6);
+                decProgCode += con2dec(partStr);
+                
+                if (progCode.charAt(i + 6) === "-") {
+                    decProgCode += "-";
+                }
+                i = i + 6;
+            
+         }      
+         return(decProgCode);
+}
+>>>>>>> origin/marta
