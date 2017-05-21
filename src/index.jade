@@ -1,10 +1,5 @@
 html(lang="en")
-  // Variables
-  - var tabLength = 200;
-  - var tabHeight = 40;
-  - var arrowLength = 15
-  - var arrowHeight = 4
-  //Site
+
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -14,22 +9,24 @@ html(lang="en")
 
     title Blogi UX
 
-    // Latest compiled and minified CSS
+    //- Latest compiled and minified CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-    
 
-    //main CSS file
-    link(rel='stylesheet', href='font-awesome.min.css')
-    link(href="style.min.css" rel="stylesheet")   
+    //- fontawesome
+    //- link(rel='stylesheet' type='text/css' href='font-awesome.min.css')
+    <script src="https://use.fontawesome.com/6ca5b44863.js"></script>
+
+    //- main CSS file
+    link(rel="stylesheet" type='text/css' href='style.min.css')
         
-    //jquery
+    //- jquery
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
 
   body
     section(class='header') 
       div(class='row text-center')
         div(class='col-sm-1')
-          a(class=' fa fa-graduation-cap logo' href="index.html" )
+          a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
         div(class='col-sm-11')
           h1 WITAJ -- #{nick} -- W ŚWIECIE UX!
@@ -78,7 +75,7 @@ html(lang="en")
         h4 Marta Smektała
         h4 informatyka zaoczne 
 
-    // Latest compiled and minified JavaScript
+    //- Latest compiled and minified JavaScript
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-    //custom JS
+    //- custom JS
     script(src="project.min.js")

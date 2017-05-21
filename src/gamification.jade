@@ -1,10 +1,5 @@
 html(lang="en")
-  // Variables
-  - var tabLength = 200;
-  - var tabHeight = 40;
-  - var arrowLength = 15
-  - var arrowHeight = 4
-  //Site
+
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -14,29 +9,30 @@ html(lang="en")
 
     title Czytaj blogi!
 
-    // Latest compiled and minified CSS
+    //- atest compiled and minified CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
 
-    //main CSS file
-    link(rel='stylesheet', href='font-awesome.min.css')
-    link(href="style.min.css" rel="stylesheet")   
-    
+    //- fontawesome
+    //- link(rel='stylesheet' type='text/css' href='font-awesome.min.css')
+    <script src="https://use.fontawesome.com/6ca5b44863.js"></script>
 
-        
-    //jquery
+    //- main CSS file
+    link(rel="stylesheet" type='text/css' href='style.min.css')
+    
+    //- jquery
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
 
   body
     section(class='header') 
       div(class='row text-center')
         div(class='col-sm-1')
-          a(class=' fa fa-graduation-cap logo' href="index.html" )
+          a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
         div(class='col-sm-11')
           h1 Witaj w świecie UX <span id='userNameField'> </span> !
           h2 Twój kod progresu to: <input type='text' id='showCode'>
 
-    section(class='popup') 
+    div(class='popup' id='askNamePu') 
       div(class='row text-center')
         div(class='col-sm-3')
         div(class='col-sm-6')
@@ -45,10 +41,10 @@ html(lang="en")
             input#usr.form-control(type='text' class='input')
             button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") ZACZYNAMY!
         div(class='col-sm-3')
-          i(class=' fa fa-close close')
+          i(class=' fa fa-close close' onclick='closePopupX(this)')
 
-//- 
-    section(class='popup') 
+
+    div(class='popup' id='successPu') 
       div(class='row text-center')
         div(class='col-sm-3')
           img(src='img/icon3.png', alt='icon first' class='icon_popup')
@@ -56,43 +52,56 @@ html(lang="en")
           h1(style='color:#2F1B41;font-size:24px') GRATULACJE!!! 
           p(style='color:#2F1B41;')  Odpowiedziałeś poprawnie na pytanie
         div(class='col-sm-3')
-          i(class=' fa fa-close close')
--//
-//-
-    section(class='popup') 
+          i(class=' fa fa-close close' onclick='closePopupX(this)')
+
+    div(class='popup' id='failurePu') 
       div(class='row text-center')
         div(class='col-sm-3')
-        div(class='col-sm-6')
-          .form-group
-            label(for='usr' class='popup_text' style='font-size:16px; margin-bottom:10px;') Czy Nelsen Norman stwierdził, ze Usability to uzyteczność? Odp TAK/NIE
-            input#usr.form-control(type='text' class='input')
-            button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") WYŚLIJ ODP
+          img(src='img/icon3.png', alt='icon first' class='icon_popup')
+        div(class='col-sm-6 text_gratulation')
+          h1(style='color:#2F1B41;font-size:24px') Niestety, zła odpowiedź.
+          p(style='color:#2F1B41;') Rozwaz przeczytanie artykułu raz jeszcze.
         div(class='col-sm-3')
-          i(class=' fa fa-close close')
--//
+          i(class=' fa fa-close close' onclick='closePopupX(this)')
+    
+
+    div(class='popup' id='questionPu') 
+      div(class='row text-center')
+        div(class='col-sm-1')
+        div(class='col-sm-10')
+            div(class='row')
+              div(class='col-xs-12')
+                label(for='usr' class='popup_text' id='questionText' style='font-size:16px; margin-bottom:10px;') dummy
+            div(class='row')
+              div(class='col-xs-5')
+                button.btn(type='button' class='gam_btn' id='yes' onclick='userAnswer(this)') TAK
+              div(class='col-xs-offset-2 col-xs-5')
+                button.btn(type='button' class='gam_btn' id='no' onclick='userAnswer(this)') NIE
+        div(class='col-sm-1')
+          i(class=' fa fa-close close' onclick='closePopupX(this)')
 
     section(class='firstG') 
       div(class='row text-center')
         div(class='col-sm-1')
         div(class='col-sm-10')
           div(class='row text-center')
-            div(class='col-sm-2 gifts')
+            div(class='col-sm-2 gifts' id='icon-1')
              i(class=' fa fa-hand-rock-o')
              h4 POCZĄTKUJĄCY UX
-            div(class='col-sm-2 gifts')
-              i(class=' fa fa-heart-o ')
+            div(class='col-sm-2 gifts' id='icon-2')
+              i(class='fa fa-heart-o')
               h4  SUMIENNY UX
-            div(class='col-sm-2 gifts')
+            div(class='col-sm-2 gifts' id='icon-3')
               i(class='fa fa-smile-o')
               h4 DOBRY UX
-            div(class='col-sm-2 gifts')
-              i(class=' fa fa-angellist')
+            div(class='col-sm-2 gifts' id='icon-4')
+              i(class='fa fa-angellist')
               h4  AMBITNY UX
-            div(class='col-sm-2 gifts')
-              i(class=' fa fa-flash')
+            div(class='col-sm-2 gifts' id='icon-5')
+              i(class='fa fa-flash')
               h4 UX BURZA
-            div(class='col-sm-2 gifts')
-              i(class=' fa fa-diamond')
+            div(class='col-sm-2 gifts' id='icon-6')
+              i(class='fa fa-diamond')
               h4 UX MASTER
         div(class='col-sm-1')
       div(class='space title')
@@ -108,33 +117,33 @@ html(lang="en")
                           h4 ETAP 1/2
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-1' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-1')
                             i(class='fa fa-check-circle')
                             p CZYM JEST USER EXPERIENCE (UX)?
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-2' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-2')
                             i(class='fa fa-check-circle')
                             p RÓZNICA MIEDZY UX A UI
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.grupa-tense.pl/blog/ux-to-nie-ui-roznice-miedzy-user-interface-a-user-experience/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-3' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-3')
                             i(class='fa fa-check-circle')
                             p ZADANIA UX I UI DESIGNERA
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://ux.marszalkowski.org/ux-vs-ui-czym-sie-rozni-ux-design-od-ui-design/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Zobacz blogi!
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-4' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-4')
                             i(class='fa fa-check-circle')
                             p CO TO JEST UZYTECZNOŚĆ?
                             div(class='btn_gamification')
-                            button.btn(type='button' class='gam_btn' onclick="window.open('http://www.kursusability.pl/kurs-usability/co-to-jest-usability-/co-to-jest-usability')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn' onclick="window.open('http://www.kursusability.pl/kurs-usability/co-to-jest-usability-/co-to-jest-usability')") Czytaj
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                           
                     div(class='row br_class')
                       div(class='col-sm-2')
@@ -142,33 +151,33 @@ html(lang="en")
                           h4 ETAP 2/2
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-5' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-5')
                             i(class='fa fa-check-circle')
                             p PROCES UX
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://www.uxbox.sk/?en#Understand'')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-6' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-6')
                             i(class='fa fa-check-circle')
                             p SZCZEGÓŁOWY PROCES UX 
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://uxchecklist.github.io/)") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-7' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-7')
                             i(class='fa fa-check-circle')
                             p NARZĘDZIA DLA UX DESIGNERA
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://www.digitalartsonline.co.uk/features/interactive-design/17-best-ux-design-tools-top-ux-websites-apps-for-designers/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-8' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-8')
                             i(class='fa fa-check-circle')
                             p TOPOWE CERTYFIKATY UX
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usertesting.com/blog/2014/10/06/ux-certification-programs/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
           input#tab2(type='radio', name='tabs')
           #tab2-content.tab-label-content
             label(for='tab2') ETAP ŚREDNIO-ZAAWANSOWANY
@@ -180,33 +189,33 @@ html(lang="en")
                           h4 ETAP 1/3
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-9' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-9')
                             i(class='fa fa-check-circle')
                             p BURZA MÓZGÓW
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.mindtools.com/brainstm.html')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-10' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-10')
                             i(class='fa fa-check-circle')
                             p TWORZENIE PERSON
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://uxbite.com/2010/08/tworzenie-person/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-11' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-11')
                             i(class='fa fa-check-circle')
                             p ŚCIEZKI UZYTKOWNIKA
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://www.servicedesigntools.org/tools/8')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-12' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-12')
                             i(class='fa fa-check-circle')
                             p SORTOWANIE KART
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.youtube.com/watch?v=PmioMessMbY')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                           
                     div(class='row br_class')
                       div(class='col-sm-2')
@@ -214,66 +223,66 @@ html(lang="en")
                           h4 ETAP 2/3
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-13' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-13')
                             i(class='fa fa-check-circle')
                             p ARCHITEKTURA INFORMACJI (AI)
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://uxmag.com/articles/information-architecture-design-for-understanding')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-14' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-14')
                             i(class='fa fa-check-circle')
                             p STRUKTURA AI
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usability.gov/how-to-and-tools/methods/organization-structures.html')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-15' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-15')
                             i(class='fa fa-check-circle')
                             p ORGANIZACJA AI
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usability.gov/how-to-and-tools/methods/organization-schemes.html)") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes2' id='id-16' onclick='complete(this)')
+                          div(class='blog font-awes2' id='id-16')
                             i(class='fa fa-check-circle')
                             p ZAWARTOŚĆ AI
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usability.gov/how-to-and-tools/methods/content-inventory.html')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                     div(class='row br_class')
                       div(class='col-sm-2')
                         div(class='rating3')
                           h4 ETAP 3/3
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes3' id='id-17' onclick='complete(this)')
+                          div(class='blog font-awes3' id='id-17')
                             i(class='fa fa-check-circle')
                             p MAKIETY W UX
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://blog.ideacto.pl/co-to-sa-makiety-i-jaka-jest-rola-projektanta-ux-w-projekcie-tworzenia-firmowego-serwisu-internetowego/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes3' id='id-18' onclick='complete(this)')
+                          div(class='blog font-awes3' id='id-18')
                             i(class='fa fa-check-circle')
                             p RODZAJE MAKIET UX
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://designmodo.com/wireframing-prototyping-mockuping/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes3' id='id-19' onclick='complete(this)')
+                          div(class='blog font-awes3' id='id-19')
                             i(class='fa fa-check-circle')
                             p JAK ROBIĆ SZKIELETY APLIKACJI
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://www.creativebloq.com/web-design/use-mockups-21514108')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes3' id='id-20' onclick='complete(this)')
+                          div(class='blog font-awes3' id='id-20')
                             i(class='fa fa-check-circle')
                             p TWORZENIE MAKIET
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://support.balsamiq.com/sales/howtochoose/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                                     
                         
           input#tab3(type='radio', name='tabs')
@@ -287,33 +296,33 @@ html(lang="en")
                           h4 ETAP 1/1
                       div(class='col-sm-10')
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-21' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-21')
                             i(class='fa fa-check-circle')
                             p DOSTĘPNOŚĆ W UX 
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://www.udacity.com/course/web-accessibility--ud891')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-22' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-22')
                             i(class='fa fa-check-circle')
                             p UX W VR
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('http://www.creativebloq.com/ux/the-user-experience-of-virtual-reality-31619635')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-23' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-23')
                             i(class='fa fa-check-circle')
                             p FRAMEWORK DLA VR
                             div(class='btn_gamification')
                               button.btn(type='button' class='gam_btn' onclick="window.open('https://medium.com/@Punchcut/an-experience-framework-for-virtual-reality-f8b3e16856f7')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Zobacz blogi!
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Zobacz blogi!
                         div(class='col-sm-3')
-                          div(class='blog font-awes' id='id-24' onclick='complete(this)')
+                          div(class='blog font-awes' id='id-24')
                             i(class='fa fa-check-circle')
                             p PROTOTYPOWANIE W VR
                             div(class='btn_gamification')
                                button.btn(type='button' class='gam_btn' onclick="window.open('https://blog.mozvr.com/quick-vr-prototypes/')") Czytaj
-                              button.btn(type='button' class='gam_btn2' href='/gamification.html') Odhacz blog
+                              button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
           .slide
 
 
@@ -417,8 +426,35 @@ html(lang="en")
         div(class='fourthG2')
           h4 Marta Smektała
           h4 informatyka zaoczne 
+  
+  section(id='questions' visibility='collapse')
+    h6(id="q1") Lubisz placki?//1
+    h6(id="q2") Lubisz konie?//1
+    h6(id="q3") Lubisz koty?//1
+    h6(id="q4") Lubisz piwo?//1
+    h6(id="q5") Lubisz placki?//1
+    h6(id="q6") Lubisz placki?//1
+    h6(id="q7") Lubisz placki?//1
+    h6(id="q8") Lubisz placki?//1
+    h6(id="q9") Lubisz placki?//1
+    h6(id="q10") Lubisz placki?//1
+    h6(id="q11") Lubisz placki?//1
+    h6(id="q12") Lubisz placki?//1
+    h6(id="q13") Lubisz placki?//1
+    h6(id="q14") Lubisz placki?//1
+    h6(id="q15") Lubisz placki?//1
+    h6(id="q16") Lubisz placki?//1
+    h6(id="q17") Lubisz placki?//1
+    h6(id="q18") Lubisz placki?//1
+    h6(id="q19") Lubisz placki?//1
+    h6(id="q20") Lubisz placki?//1
+    h6(id="q21") Lubisz placki?//1
+    h6(id="q22") Lubisz placki?//1
+    h6(id="q23") Lubisz placki?//1
+    h6(id="q24") Lubisz placki?//1
 
-  // Latest compiled and minified JavaScript
+
+  //- Latest compiled and minified JavaScript
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-  //custom JS
+  //- custom JS
   script(src="project.min.js")

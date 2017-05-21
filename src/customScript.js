@@ -1,11 +1,17 @@
 //INITIALL SETUP
-    //window.onload = function() {
-        setCookie("progCode", "000000-000000", 10);
+    window.onload = function() {
+        setCookie("progCode", "600000-000000", 10);
         setCookie("userName", "Andrzej", 10);
 
         fillFields();
         configureSite();
-    //};
+        countPoints();
+
+        document.getElementById("askNamePu").style.visibility = "hidden";
+        document.getElementById("successPu").style.visibility = "hidden";
+        document.getElementById("failurePu").style.visibility = "hidden"; 
+        document.getElementById("questionPu").style.visibility = "hidden"; 
+    };
 
 //BASIC OPERATIONS ON COOKIES
     //CREATE COOKIE
@@ -231,11 +237,12 @@
     }
 
 //CHANGE PROGRESS CODE AFTER CLICKING ELEMENT
-    function complete(x) {
+    function complete(clickedIdNo) {
         
-        var clickedId = x.getAttribute('id').substring(3);
-        var clickedIdNo = Number(clickedId) - 1;
+        //var clickedId = x.getAttribute('id').substring(3);
+        //var clickedIdNo = Number(clickedId) - 1;
         //alert(clickedId);
+        clickedIdNo = clickedIdNo - 1;
         var progCode = getCookie("progCode");
         var binProgCode = progCd2bin(progCode);
         var arr = binProgCode.split("");
@@ -243,15 +250,13 @@
         if (binProgCode.charAt(clickedIdNo) === "0") {
             arr.splice(clickedIdNo, 1, "1");
             //x.style.backgroundColor = "red";
-        } else {
-            arr.splice(clickedIdNo, 1, "0");
-            //x.style.backgroundColor = "yellow";
-        }
+        } 
         binProgCode = arr.join("");
         progCode = progCd2dec(binProgCode);
         setCookie("progCode", progCode, 10);
         fillFields();
         configureSite();
+        countPoints();
     }  
 //WORKING WITH SITE DISPLAY
     //FILL STATIC FIELDS
@@ -277,7 +282,7 @@
             clickedElement = document.getElementById("id-" + (i + 1).toString());
                 if (binProgCode.charAt(i) === "0") {
                     //clickedElement.style.backgroundColor = "yellow";
-                    clickedElement.children[0].style.color = "#F2F2F2";
+                    clickedElement.children[0].style.color = "#6b7482";
                 } else {
                     //clickedElement.style.backgroundColor = "red";
                     clickedElement.children[0].style.color = "#90ee90";
@@ -286,41 +291,73 @@
         }
     }   
 
-    function checkAnswer() {
+    var askedQuesitonId = 0;
 
+    function askQuestion(q) {        
+        document.getElementById("questionPu").style.visibility = "visible";
+        var clickedId = q.parentElement.parentElement.getAttribute('id').substring(3);
+        askedQuesitonId = Number(clickedId);
+        var question = document.getElementById("q" + askedQuesitonId.toString()).innerHTML;
+        question = question.substring(0, question.length - 3);
+        document.getElementById("questionText").innerHTML = question;
+        //alert();
     }
 
-//SCRAPYARD
-    // //SHOW AND RETURN PROGRESS CODE
-    // function getProgCode() {
-    //     var progCode = getCookie("progCode");
-    //     //alert(progCode);
-    //     return(progCode);
-    // }
+    function userAnswer(a) {
+        var ans;
+        var clickedId = a.getAttribute('id');
+        if (clickedId === "yes") {
+            ans = 1;
+        } else {
+            ans = 0;
+        }
+        //alert(askedQuesitonId);
+        var corAnswer = document.getElementById("q" + askedQuesitonId.toString()).innerHTML;
+        var corAnswerLogical = Number(corAnswer.substring(corAnswer.length -1));
+        if (ans === corAnswerLogical) {
+            document.getElementById("questionPu").style.visibility = "hidden";
+            document.getElementById("successPu").style.visibility = "visible";
+            closePopupTime("successPu");
+            complete(askedQuesitonId);
+            //grey-out whole box
+        } else {
+            document.getElementById("questionPu").style.visibility = "hidden";
+            document.getElementById("failurePu").style.visibility = "visible";
+            closePopupTime("failurePu");
+        }
+    }
 
-    // //SHOW AND RETURN USERS
-    // function getUsers() {
-    //     var users = getCookie("users");
-    //     alert(users);
-    //     return(users);
-    // }
-    // ASK FOR NAME, WHEN FIRST ARTICLE CLICKED
-    // //button(onclick="")
-    // function askForName() {
-    //     var userName = getCookie("userName");
-    //     if (userName === "") {
-    //         userName = prompt("Please share with us Your name, so we can know You better ;)\n ..and save your progress!", "");
-    //     }
-    // }
-    // function alertBinNo() {
-    //     var dummyNo = document.getElementById("dummyBinNo").value;
-    //     alert("Your number was: " + dummyNo + "; It has deen converted to: " + con2dec(dummyNo));
-    // }
-    // function alertNo() {
-    //     var dummyNo = document.getElementById("dummyNo").value;
-    //     alert("Your number was: " + dummyNo + "; It has deen converted to: " + con2bin(dummyNo));
-    // }
-    // function alertProgCode() {
-    //     var dummyNo = document.getElementById("dummyProgCode").value;
-    //     alert("Your number was: " + dummyNo + "; It has deen converted to: " + progCd2bin(dummyNo));
-    // }
+    function closePopupX(p) { 
+        var clickedId = p.parentElement.parentElement.parentElement.getAttribute('id');
+        document.getElementById(clickedId).style.visibility = "hidden";
+    }
+
+    function closePopupTime(popupName) {
+        setTimeout(function () {
+            document.getElementById(popupName).style.visibility = "hidden";
+        }, 3000);
+    }
+    function countPoints() {
+        var progCode = getCookie("progCode");
+        var binProgCode = progCd2bin(progCode);
+        var arr = binProgCode.split("");
+        var userProgress = 0;
+        for (i = 0; i < arr.length; i++) {
+            userProgress = userProgress + Number(arr[i]);
+        }
+        var iconsNo = userProgress / 4;
+        var iconsCount = iconsNo - (userProgress % 4 / 4);
+        var iconDiv;
+        if (iconsCount > 0) {
+            //alert(iconsCount);
+            for (i = 1; i <= iconsCount; i++) {
+                iconDiv = document.getElementById("icon-" + i.toString());
+                iconDiv.style.opacity = "1.0";
+           //iconDiv[0].setAttribute("style","opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100)");
+                iconDiv.children[0].style.color = "#9F1E49";
+                iconDiv.children[1].style.color = "#9F1E49";
+                iconDiv.children[0].style.opacity = "1.0";
+                iconDiv.children[1].style.opacity = "1.0";
+            }
+        }
+    }
