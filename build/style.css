@@ -6876,6 +6876,53 @@ button.close {
   color: #cf8ea4;
   text-decoration: none;
 }
+.popup {
+  width: 40%;
+  height: 200px;
+  background: #F2F2F2;
+  -webkit-box-shadow: 9px 10px 77px -8px #857e85;
+  -moz-box-shadow: 9px 10px 77px -8px #857e85;
+  box-shadow: 9px 10px 77px -8px #857e85;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 30%;
+  position: absolute;
+  z-index: 1;
+  border-radius: 10px;
+}
+.popup_text {
+  color: #2F1B41;
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'lato_regular', sans-serif;
+}
+.input {
+  border: solid 2px #9F1E49;
+  border-radius: 30px;
+}
+.input:focus {
+  border: solid 2px #FECD51;
+}
+.icon_popup {
+  height: 150px;
+  -webkit-box-shadow: 9px 10px 77px -8px #857e85;
+  -moz-box-shadow: 9px 10px 77px -8px #857e85;
+  box-shadow: 9px 10px 77px -8px #857e85;
+  border-radius: 102px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.close {
+  position: relative;
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 24px;
+}
+.text_gratulation {
+  margin-top: 60px;
+  left: 10%;
+}
 .first {
   background: #FECD51;
   color: white;
