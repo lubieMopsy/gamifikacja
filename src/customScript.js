@@ -250,7 +250,7 @@
         progCode = progCd2dec(binProgCode);
         setCookie("progCode", progCode, 10);
         fillFields();
-        //configureSite();
+        configureSite();
     }  
 //WORKING WITH SITE DISPLAY
     //FILL STATIC FIELDS
@@ -265,16 +265,21 @@
     function configureSite() {
             var progCode = getCookie("progCode");
             var binProgCode = progCd2bin(progCode);
+            var clickedElement;
             //alert(document.getElementById(toString(1)));
 
             for (i = 0; i < binProgCode.length; i++) {
-                alert(document.getElementById("id-" + (i + 1).toString()));
-                    if (binProgCode.charAt(i) === 0) {
-                        document.getElementById(toString("id-1"));
-                        //document.getElementById(toString("id-" + (i + 1).toString())).style.backgroundColor = "yellow";
+                if (document.getElementById("id-" + (i + 1).toString()) !== null) {
+                clickedElement = document.getElementById("id-" + (i + 1).toString());
+                
+                //alert(clickedElement);
+                    if (binProgCode.charAt(i) === "0") {
+                        clickedElement.style.backgroundColor = "yellow";
+                        //$("p").css("background-color");
                     } else {
-                        document.getElementById(toString("id-" + (i + 1).toString())).style.backgroundColor = "red";
-                    }       
+                        clickedElement.style.backgroundColor = "red";
+                    }   
+                }    
             }
     }   
 
