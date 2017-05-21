@@ -6841,33 +6841,19 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 @font-face {
-  font-family: Technical_font;
-  src: url(../../fonts/RomanS.ttf);
-}
-@font-face {
-  font-family: Technical_font_italic;
-  src: url(../../fonts/Pismo_Techniczne_Pochyle.ttf);
-}
-@font-face {
-  font-family: Technical_font_hand;
-  src: url(../../fonts/EngineerHand.ttf);
-}
-@font-face {
   font-family: font_awesome;
   src: url(../../fonts/fontawesome-webfont.ttf);
 }
 @font-face {
-  font-family: Lato_black;
+  font-family: lato_black;
   src: url(../../fonts/Lato-Black.ttf);
 }
-<<<<<<< HEAD
-=======
 @font-face {
-  font-family: Lato_regular;
+  font-family: lato_regular;
   src: url(../../fonts/Lato-Regular.ttf);
 }
 @font-face {
-  font-family: Lato_light;
+  font-family: lato_light;
   src: url(../../fonts/Lato-Light.ttf);
 }
 .header {
@@ -6890,7 +6876,6 @@ button.close {
   color: #cf8ea4;
   text-decoration: none;
 }
->>>>>>> origin/marta2
 .first {
   background: #FECD51;
   color: white;
@@ -6901,12 +6886,12 @@ button.close {
   text-align: center;
   color: white;
   margin-top: 80px;
-  font-family: Lato, sans-serif;
+  font-family: lato-regular, sans-serif;
   margin-bottom: 20px;
 }
 .gifts h4 {
   text-align: center;
-  font-family: Lato-regular, sans-serif;
+  font-family: lato-regular, sans-serif;
   color: #cba433;
   margin-top: 20px;
 }
@@ -6932,7 +6917,7 @@ button.close {
   height: 50px;
   width: 250px;
   font-size: 1.2em;
-  font-family: Lato, sans-serif;
+  font-family: lato-regular, sans-serif;
 }
 .main_btn:hover {
   box-shadow: none;
@@ -6989,7 +6974,7 @@ button.close {
   color: #2F1B41;
   height: 50px;
   font-size: 1.2em;
-  font-family: Lato;
+  font-family: lato-regular, sans-serif;
 }
 .btn_third:hover {
   box-shadow: none;
@@ -7043,7 +7028,7 @@ body {
 }
 .title h2 {
   text-align: center;
-  font-family: Lato-regular;
+  font-family: lato-regular, sans-serif;
   font-size: 32px;
   opacity: 0.1;
 }
@@ -7065,7 +7050,7 @@ p,
 a,
 h1,
 div {
-  font-family: Lato-regular, sans-serif;
+  font-family: lato-regular, sans-serif;
 }
 .tab-wrap {
   width: 90%;
@@ -7166,21 +7151,21 @@ label {
 .rating h4 {
   font-size: 18px;
   text-align: center;
-  font-family: Lato-regular;
+  font-family: lato-regular, sans-serif;
   opacity: 0.5;
   margin-top: 15px;
 }
 .rating2 h4 {
   font-size: 18px;
   text-align: center;
-  font-family: Lato-regular;
+  font-family: lato-regular, sans-serif;
   opacity: 0.5;
   margin-top: 15px;
 }
 .rating3 h4 {
   font-size: 18px;
   text-align: center;
-  font-family: Lato-regular;
+  font-family: lato-regular, sans-serif;
   opacity: 0.5;
   margin-top: 15px;
 }
@@ -7194,10 +7179,6 @@ label {
   box-shadow: 9px 10px 77px -8px #857e85;
   padding: 20px 20px 20px 20px;
 }
-<<<<<<< HEAD
-.blog h4 {
-  color: black;
-=======
 .blog:hover {
   box-shadow: 9px 10px 77px -8px rgba(192, 186, 192, 0.9);
   transition-duration: width 9s;
@@ -7209,7 +7190,7 @@ label {
 }
 .blog p {
   color: #2F1B41;
-  font-family: Lato-regular;
+  font-family: lato-regular, sans-serif;
   text-align: center;
 }
 .font-awes i {
@@ -7238,7 +7219,6 @@ label {
 }
 .font-awes3 i:hover {
   color: #F2F2F2;
->>>>>>> origin/marta2
 }
 .secondG h4 {
   color: black;
@@ -7257,7 +7237,7 @@ label {
   width: 150px;
   height: 40px;
   font-size: 1.2em;
-  font-family: Lato, sans-serif;
+  font-family: lato-regular, sans-serif;
   color: white;
   display: block;
   margin-left: auto;
@@ -7272,7 +7252,7 @@ label {
   width: 150px;
   height: 40px;
   font-size: 1.2em;
-  font-family: Lato, sans-serif;
+  font-family: lato-regular, sans-serif;
   color: white;
   display: block;
   margin-left: auto;

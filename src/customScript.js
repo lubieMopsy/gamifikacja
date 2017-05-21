@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //INITIALL SETUP
     //window.onload = function() {
         setCookie("progCode", "000000-000000", 10);
@@ -258,8 +257,10 @@
     function fillFields() {
         var progCode = getCookie("progCode");
         var binProgCode = progCd2bin(progCode);
-        document.getElementById("showBinCode").value = binProgCode;
-        document.getElementById("showCode").value = progCode;
+        if (document.getElementById("showBinCode") !== null && document.getElementById("showBinCode") !== null) {
+            document.getElementById("showBinCode").value = binProgCode;
+            document.getElementById("showCode").value = progCode;
+        }
     }
 
     //HIGHLIGHT READ ARTICLES
@@ -320,5 +321,3 @@
     //     var dummyNo = document.getElementById("dummyProgCode").value;
     //     alert("Your number was: " + dummyNo + "; It has deen converted to: " + progCd2bin(dummyNo));
     // }
-=======
->>>>>>> origin/marta2
