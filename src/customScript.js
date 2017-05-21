@@ -1,9 +1,10 @@
 //INITIALL SETUP
     //window.onload = function() {
         setCookie("progCode", "000000-000000", 10);
-        setCookie("userName", "my friend", 10);
+        setCookie("userName", "Andrzej", 10);
 
         fillFields();
+        configureSite();
     //};
 
 //BASIC OPERATIONS ON COOKIES
@@ -256,36 +257,38 @@
     //FILL STATIC FIELDS
     function fillFields() {
         var progCode = getCookie("progCode");
+        var userName = getCookie("userName");
         var binProgCode = progCd2bin(progCode);
-        if (document.getElementById("showBinCode") !== null && document.getElementById("showBinCode") !== null) {
-            document.getElementById("showBinCode").value = binProgCode;
+        if (document.getElementById("userNameField") !== null && document.getElementById("showCode") !== null) {
+            //document.getElementById("showBinCode").value = binProgCode;
             document.getElementById("showCode").value = progCode;
+            document.getElementById("userNameField").innerHTML = userName;
         }
     }
 
     //HIGHLIGHT READ ARTICLES
     function configureSite() {
-            var progCode = getCookie("progCode");
-            var binProgCode = progCd2bin(progCode);
-            var clickedElement;
-            //alert(document.getElementById(toString(1)));
-
-            for (i = 0; i < binProgCode.length; i++) {
-                if (document.getElementById("id-" + (i + 1).toString()) !== null) {
-                clickedElement = document.getElementById("id-" + (i + 1).toString());
-                
-                //alert(clickedElement);
-                    if (binProgCode.charAt(i) === "0") {
-                        clickedElement.style.backgroundColor = "yellow";
-                        //$("p").css("background-color");
-                    } else {
-                        clickedElement.style.backgroundColor = "red";
-                    }   
-                }    
-            }
+        var progCode = getCookie("progCode");
+        //alert(progCode);
+        var binProgCode = progCd2bin(progCode);
+        var clickedElement;
+        for (i = 0; i < binProgCode.length; i++) {
+            if (document.getElementById("id-" + (i + 1).toString()) !== null) {
+            clickedElement = document.getElementById("id-" + (i + 1).toString());
+                if (binProgCode.charAt(i) === "0") {
+                    //clickedElement.style.backgroundColor = "yellow";
+                    clickedElement.children[0].style.color = "#F2F2F2";
+                } else {
+                    //clickedElement.style.backgroundColor = "red";
+                    clickedElement.children[0].style.color = "#90ee90";
+                }   
+            }    
+        }
     }   
 
+    function checkAnswer() {
 
+    }
 
 //SCRAPYARD
     // //SHOW AND RETURN PROGRESS CODE

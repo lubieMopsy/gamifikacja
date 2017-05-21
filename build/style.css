@@ -7032,19 +7032,6 @@ body {
   font-size: 32px;
   opacity: 0.1;
 }
-/*
-@mixin tabs {
-  @for $i from 1 through 3 {
-    &:nth-of-type(#{$i}) {
-      &:checked {
-        ~ .slide {
-          left: calc((100% / #{3}) * #{$i - 1});
-        }
-      }
-    }
-  }
-}
-*/
 label,
 p,
 a,
@@ -7053,7 +7040,7 @@ div {
   font-family: lato-regular, sans-serif;
 }
 .tab-wrap {
-  width: 90%;
+  width: 100%;
   margin-left: 0%;
   position: relative;
   display: flex;
@@ -7087,16 +7074,6 @@ label {
   transition: color 0.2s ease;
   width: 100%;
 }
-/* .slide {
-  background: #9F1E49;
-  width: calc(100% / 3);
-  height: 4px;
-  position: absolute;
-  left: 0;
-  top: calc(100% - 4px);
-  transition: left 0.3s ease-out;
-}
-*/
 .tab-label-content {
   width: 100%;
   color: black;
@@ -7114,7 +7091,7 @@ label {
     padding: 40px 0 90px 10%;
   }
   .tab-wrap {
-    width: 80%;
+    width: 100%;
     margin-left: 10%;
     top: -106px;
   }
@@ -7211,15 +7188,6 @@ label {
   margin-left: 80%;
   margin-bottom: 5px;
 }
-.font-awes i:hover {
-  color: #F2F2F2;
-}
-.font-awes2 i:hover {
-  color: #F2F2F2;
-}
-.font-awes3 i:hover {
-  color: #F2F2F2;
-}
 .secondG h4 {
   color: black;
   position: relative;
@@ -7279,6 +7247,3 @@ label {
 .fourthG2 {
   margin-top: 30px;
 }
-/* dimensions */
-/* colors */
-/* fonts */
