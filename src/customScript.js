@@ -360,4 +360,22 @@
                 iconDiv.children[1].style.opacity = "1.0";
             }
         }
+        var stagePer = 0;
+        var styledRating;
+        userProgress = 0;
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < 4; j++) {
+                userProgress = userProgress + Number(arr[i + j]);
+            }
+            stagePer = userProgress / 4 * 250;           
+            styledRating = document.getElementById("rat-" + (i/4+1).toString());
+            if (styledRating !== null) {
+                styledRating.style.height = stagePer.toString() + "px";
+            }
+            stagePer = userProgress / 4 * 100;
+            styledRating.children[0].innerHTML = stagePer.toString() + "%";
+            userProgress = 0;
+            i = i + 3;
+        }
+      
     }
