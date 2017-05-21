@@ -1,4 +1,9 @@
 //INITIALL SETUP
+        document.getElementById("askNamePu").style.visibility = "hidden";
+        document.getElementById("successPu").style.visibility = "hidden";
+        document.getElementById("failurePu").style.visibility = "hidden"; 
+        document.getElementById("questionPu").style.visibility = "hidden"; 
+    
     window.onload = function() {
         setCookie("progCode", "600000-000000", 10);
         setCookie("userName", "Andrzej", 10);
@@ -7,10 +12,7 @@
         configureSite();
         countPoints();
 
-        document.getElementById("askNamePu").style.visibility = "hidden";
-        document.getElementById("successPu").style.visibility = "hidden";
-        document.getElementById("failurePu").style.visibility = "hidden"; 
-        document.getElementById("questionPu").style.visibility = "hidden"; 
+
     };
 
 //BASIC OPERATIONS ON COOKIES
