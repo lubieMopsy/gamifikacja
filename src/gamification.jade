@@ -36,6 +36,41 @@ html(lang="en")
           h1 Witaj w świecie UX <span id='userNameField'> </span> !
           h2 Twój kod progresu to: <input type='text' id='showCode'>
 
+    section(class='popup') 
+      div(class='row text-center')
+        div(class='col-sm-3')
+        div(class='col-sm-6')
+          .form-group
+            label(for='usr' class='popup_text') Podaj swój nick:
+            input#usr.form-control(type='text' class='input')
+            button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") ZACZYNAMY!
+        div(class='col-sm-3')
+          i(class=' fa fa-close close')
+
+//- 
+    section(class='popup') 
+      div(class='row text-center')
+        div(class='col-sm-3')
+          img(src='img/icon3.png', alt='icon first' class='icon_popup')
+        div(class='col-sm-6 text_gratulation')
+          h1(style='color:#2F1B41;font-size:24px') GRATULACJE!!! 
+          p(style='color:#2F1B41;')  Odpowiedziałeś poprawnie na pytanie
+        div(class='col-sm-3')
+          i(class=' fa fa-close close')
+-//
+//-
+    section(class='popup') 
+      div(class='row text-center')
+        div(class='col-sm-3')
+        div(class='col-sm-6')
+          .form-group
+            label(for='usr' class='popup_text' style='font-size:16px; margin-bottom:10px;') Czy Nelsen Norman stwierdził, ze Usability to uzyteczność? Odp TAK/NIE
+            input#usr.form-control(type='text' class='input')
+            button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") WYŚLIJ ODP
+        div(class='col-sm-3')
+          i(class=' fa fa-close close')
+-//
+
     section(class='firstG') 
       div(class='row text-center')
         div(class='col-sm-1')
