@@ -16,51 +16,66 @@ html(lang="en")
 
     // Latest compiled and minified CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    link(rel='stylesheet', href='font-awesome.min.css')
 
     //main CSS file
     link(href="style.min.css" rel="stylesheet")   
-    
-
         
-    //- //jquery
-    //- script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+    //jquery
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
 
   body
+    section(class='header') 
+      div(class='row text-center')
+        div(class='col-sm-1')
+          a(class=' fa fa-graduation-cap logo' href="index.html" )
+          p UX BLOGI
+        div(class='col-sm-11')
+          h1 WITAJ -- #{nick} -- W ŚWIECIE UX!
+          h2 TWÓJ NUMER KODU: #{kod}
+
     section(class='first') 
       div(class='row text-center')
-        div(class='col-sm-12')
-          h1 Title title title
-          h4 Opis do tytulu
-          button.btn(type='button' class='main_btn' href='/gamification.html') Zobacz blogi!
+        div(class='col-sm-3')
+        div(class='col-sm-6')
+          h1 UX to Twoja dziedzina?
+          h4 Ta strona pomoze Ci poszezyć wiedzę z zakresu User Experience!
+          button.btn(type='button' class='main_btn' onclick="window.open('gamification.html')") PRZEJDŹ DO DZIAŁANIA!
+        div(class='col-sm-3')
 
     section(class='second')  
       div(class='row')
-        h1 Title title title
-        div(class='col-sm-4 pagination-centered')
-          img(src='img/icon1.png', alt='icon first' class='icons')
-          h4 Opis do tytulu
-        div(class='col-sm-4')
+        h1 Dlaczego akurat ta strona?
+        div(class='col-sm-2')
+        div(class='col-sm-2 pagination-centered')
           img(src='img/icon2.png', alt='icon first' class='icons')
-          h4 Opis do tytulu
-        div(class='col-sm-4')
+          h4 SYSTEMATYCZNA NAUKA
+        div(class='col-sm-2')
           img(src='img/icon3.png', alt='icon first' class='icons')
-          h4 Opis do tytulu
+          h4 ODZNAKI ZA PRZECZYTANE ARTYKUŁY
+        iv(class='col-sm-2')
+          img(src='img/icon1.png', alt='icon first' class='icons')
+          h4 ZOSTAŃ MASTEREM UX!
+        div(class='col-sm-2')
+          img(src='img/icon4.png', alt='icon first' class='icons')
+          h4 ŚWIĘTUJ Z NAMI TWOJE ZWYCIĘSTWO
+        div(class='col-sm-2')
 
   section(class='third') 
     div(class='row text-center')
       div(class='col-sm-12')
-        h1 Title title title
-        h4 Opis do tytulu
-        button.btn(type='button', class='btn_third') Basic
+        h1 Chciałbyś zostać lepszym UX Designerem?
+        h4 Nie czekaj ta strona jest dla Ciebie!
+        button.btn(type='button', class='btn_third') A MOZE JEDNAK?
 
   section(class='fourth') 
     div(class='row text-center')
       div(class='col-sm-6')
-        h4 Title title title
-        h4 Opis do tytulu
+        h4 Zaliczenie projektu magisterskiego
+        h4 Seminarium 2017
       div(class='col-sm-6')
-        h4 Title title title
-        h4 Opis do tytulu
+        h4 Marta Smektała
+        h4 informatyka zaoczne 
 
     // Latest compiled and minified JavaScript
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')

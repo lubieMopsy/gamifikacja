@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //INITIALL SETUP
     //window.onload = function() {
         setCookie("progCode", "000000-000000", 10);
@@ -319,3 +320,5 @@
     //     var dummyNo = document.getElementById("dummyProgCode").value;
     //     alert("Your number was: " + dummyNo + "; It has deen converted to: " + progCd2bin(dummyNo));
     // }
+=======
+>>>>>>> origin/marta2
