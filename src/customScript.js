@@ -5,12 +5,14 @@
         document.getElementById("questionPu").style.visibility = "hidden"; 
     
     window.onload = function() {
-        setCookie("progCode", "600000-000000", 10);
-        setCookie("userName", "Andrzej", 10);
+        //setCookie("progCode", "600000-000000", 10);
+        //setCookie("userName", "Andrzej", 10);
 
+        askForName();
         fillFields();
         configureSite();
         countPoints();
+        
 
 
     };
@@ -85,11 +87,11 @@
                 progCode = exUsersArr[pos + 1];
                 alert("Nowy uzytkownik znaleziony na pozycji: " + pos + "! Czytam prog code: " + exUsersArr[pos + 1] + " dla uzytkownika: " + exUsersArr[pos]);
                 setCookie("progCode", progCode, 10);
-                return progCode;
+                //HELLO popup / old user
             } else {
                 alert("Nowy uzytkownik nie znaleziony - nowy uzytkownik serwisu");
-                setCookie("progCode", "000000-000000-000000", 10);
-                return "000000-000000-000000";
+                setCookie("progCode", "000000-000000", 10);
+                //HELLO popup / new user
             }
         } 
     }
@@ -114,7 +116,7 @@
             if (exist === 1) {
                 //exUsersArr.Splice(pos + 1,1);
                 exUsersArr[pos + 1] = progCode;
-                alert("Stary uzytkownik znaleziony na pozycji: " + pos + "! Wpisuje prog code: " + exUsersArr[pos + 1] + " dla uzytkownika: " + exUsersArr[pos]);
+                //alert("Stary uzytkownik znaleziony na pozycji: " + pos + "! Wpisuje prog code: " + exUsersArr[pos + 1] + " dla uzytkownika: " + exUsersArr[pos]);
                 exUsersNewArr = exUsersArr;
                 exUsersNew = exUsersNewArr.join("//");
                 setCookie("users", exUsersNew, 10);
@@ -122,18 +124,18 @@
                 exUsersNewArr = exUsersArr.concat([userName, progCode]);
                 exUsersNew = exUsersNewArr.join("//");
                 setCookie("users", exUsersNew, 10);
-                alert("Stary uzytkownik nie znalecony");
+                //alert("Stary uzytkownik nie znaleziony");
             }
         } else {
-        exUsersNewArr = [userName, progCode];    
-        exUsersNew = exUsersNewArr.join("//");
-        setCookie("users", exUsersNew, 10);
+            exUsersNewArr = [userName, progCode];    
+            exUsersNew = exUsersNewArr.join("//");
+            setCookie("users", exUsersNew, 10);
         }
 
-        for (f = 0; f < exUsersNewArr.length; f++) {
-            alert(f + " [" + exUsersNewArr[f] + "]-[" + exUsersNewArr[f + 1]+ "]");
-            f = f + 1;
-        }
+        // for (f = 0; f < exUsersNewArr.length; f++) {
+        //     alert(f + " [" + exUsersNewArr[f] + "]-[" + exUsersNewArr[f + 1]+ "]");
+        //     f = f + 1;
+        // }
     }
     //READ USER NAME
     function readUserName() {
@@ -141,27 +143,36 @@
         var progCode;
         var oldUserName;
         var oldProgCode;
+        var message;
         if (cookieEx("userName")) {
+            //alert("exists!");
             oldUserName = getCookie("userName");
         } else {
-            oldUserName = "my friend";
+            //alert("not exists!");
+            oldUserName = "Anonymous";
         }
         if (cookieEx("progCode")) {
             oldProgCode = getCookie("progCode");
         } else {
-            oldProgCode = "00000-00000-00000";
-            setCookie("progCode", oldProgCode, 10);
+            oldProgCode = "00000-00000";
+            //setCookie("progCode", oldProgCode, 10);
         }
         if (oldUserName === userName) {
-            alert("Hello " + userName + "! We already know Your nickname, so You don't have to submit it again :) \nIf however you did not use our site yet, that seems that someone with the same nickname did. Please choose another name.");
+            message = ("Hello " + userName + "! We already know Your nickname, so You don't have to submit it again :) \nIf however you did not use our site yet, that seems that someone with the same nickname did. Please choose another name.");
+            document.getElementById('messageAskName').innerHTML = message;
         } else {
-            alert("You have sumbitted name: " + userName + ". Someone called: " + oldUserName + " was using our website before. \nDo you want to switch from user: "+ oldUserName + " to: "+ userName + " ?");
+            //message = ("You have sumbitted name: " + userName + ". Someone called: " + oldUserName + " was using our website before. \nDo you want to switch from user: "+ oldUserName + " to: "+ userName + " ?");
+            //document.getElementById('messageAskName').innerHTML = message;
 
             rememberUser(oldUserName, oldProgCode);  //save old user
             progCode = loadUser(userName);           //check and load new user
             setCookie("userName", userName, 10);
+            //setCookie("progCode", progCode, 10);
         }
-        
+        document.getElementById('askNamePu').style.visibility = "hidden";
+        fillFields();
+        configureSite();
+        countPoints();
     }  
 //CHECK IF COOKIE EXISTS
     function cookieEx(cookieName) {
@@ -302,7 +313,15 @@
         var question = document.getElementById("q" + askedQuesitonId.toString()).innerHTML;
         question = question.substring(0, question.length - 3);
         document.getElementById("questionText").innerHTML = question;
-        //alert();
+    }
+
+    function askForName() {
+        var userName = getCookie("userName");
+        if (userName === "") {
+            document.getElementById("askNamePu").style.visibility = "visible";
+        } else {
+
+        }
     }
 
     function userAnswer(a) {
@@ -339,6 +358,7 @@
             document.getElementById(popupName).style.visibility = "hidden";
         }, 3000);
     }
+
     function countPoints() {
         var progCode = getCookie("progCode");
         var binProgCode = progCd2bin(progCode);

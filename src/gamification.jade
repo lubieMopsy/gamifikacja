@@ -13,7 +13,7 @@ html(lang="en")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
 
     //- fontawesome
-    //- link(rel='stylesheet' type='text/css' href='font-awesome.min.css')
+    //-link(rel='stylesheet' type='text/css' href='font-awesome.min.css')
     <script src="https://use.fontawesome.com/6ca5b44863.js"></script>
 
     //- main CSS file
@@ -29,8 +29,10 @@ html(lang="en")
           a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
         div(class='col-sm-11')
-          h1 Witaj w świecie UX <span id='userNameField'> </span> !
+          h1 Witaj w świecie UX <span id='userNameField'> </span>!
           h2 Twój kod progresu to: <input type='text' id='showCode'>
+          h2 Zmień uzytkownika
+          button(type='btn button' class='gam_btn' onclick='askForName()') ZACZYNAMY!
 
     div(class='popup' id='askNamePu') 
       div(class='row text-center')
@@ -38,10 +40,13 @@ html(lang="en")
         div(class='col-sm-6')
           .form-group
             label(for='usr' class='popup_text') Podaj swój nick:
-            input#usr.form-control(type='text' class='input')
-            button.btn(type='button' class='gam_btn' onclick="window.open('https://www.nngroup.com/articles/definition-user-experience/')") ZACZYNAMY!
+            input.form-control(type='text' class='input' id='userNameInput')
+            button.btn(type='button' class='gam_btn' onclick='readUserName()') ZACZYNAMY!
         div(class='col-sm-3')
           i(class=' fa fa-close close' onclick='closePopupX(this)')
+      div(class='row')
+        div(class='col-sm-offset-1 col-sm-10')
+          p(id='messageAskName')
 
 
     div(class='popup' id='successPu') 
