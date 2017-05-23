@@ -6859,7 +6859,7 @@ button.close {
 .header {
   background: #9F1E49;
   color: white;
-  height: 90px;
+  height: 100px;
 }
 .header h1 {
   font-size: 18px;
@@ -6875,6 +6875,44 @@ button.close {
 .logo:hover {
   color: #cf8ea4;
   text-decoration: none;
+}
+.input_text {
+  border: solid 2px #9F1E49;
+  height: 28px;
+  border-radius: 10px;
+  background: #cf8ea4;
+  color: white;
+}
+.input_text:focus {
+  border: solid 2px white;
+  color: white;
+}
+.input_text:focus {
+  outline: 0 !important;
+  color: white;
+}
+.input_text h3 {
+  font-size: 18px;
+}
+.new_user {
+  margin-top: 16px;
+  font-size: 30px;
+  color: #cf8ea4;
+  margin: 30px 40px 5px 0;
+}
+.new_user:hover {
+  color: white;
+  text-decoration: none;
+}
+.new_user p {
+  margin-right: 14px;
+  color: #cf8ea4;
+}
+.text_user {
+  color: #cf8ea4;
+  size: 14px;
+  padding-right: 40px;
+  text-align: center;
 }
 .popup {
   width: 40%;
@@ -6988,7 +7026,7 @@ button.close {
   margin-top: 40px;
 }
 .icons {
-  height: 200px;
+  height: 180px;
   -webkit-box-shadow: 9px 10px 77px -8px #857e85;
   -moz-box-shadow: 9px 10px 77px -8px #857e85;
   box-shadow: 9px 10px 77px -8px #857e85;
@@ -7000,7 +7038,7 @@ button.close {
 }
 .third {
   background: #9F1E49;
-  height: 300px;
+  height: 330px;
 }
 .third h1 {
   color: white;
@@ -7206,19 +7244,19 @@ label {
 }
 .font-awes i {
   font-size: 32px;
-  color: #6b7482;
+  color: lightgrey;
   margin-left: 80%;
   margin-bottom: 5px;
 }
 .font-awes2 i {
   font-size: 32px;
-  color: #6b7482;
+  color: lightgrey;
   margin-left: 80%;
   margin-bottom: 5px;
 }
 .font-awes3 i {
   font-size: 32px;
-  color: #6b7482;
+  color: lightgrey;
   margin-left: 80%;
   margin-bottom: 5px;
 }

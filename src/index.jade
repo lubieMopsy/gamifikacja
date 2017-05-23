@@ -28,9 +28,12 @@ html(lang="en")
         div(class='col-sm-1')
           a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
-        div(class='col-sm-11')
-          h1 WITAJ -- #{nick} -- W ŚWIECIE UX!
-          h2 TWÓJ NUMER KODU: #{kod}
+        div(class='col-sm-9')
+          h1 Witaj w świecie UX <span id='userNameField'> </span> !
+          h4 Twój kod progresu to: <input type='text' id='showCode' class='input_text'>
+        div(class='col-sm-2')
+          a(class='fa fa-user new_user' href="" )
+          p(class="text_user" href="" ) NOWY UZYTKOWNIK
 
     section(class='first') 
       div(class='row text-center')
@@ -61,10 +64,12 @@ html(lang="en")
 
   section(class='third') 
     div(class='row text-center')
-      div(class='col-sm-12')
-        h1 Chciałbyś zostać lepszym UX Designerem?
-        h4 Nie czekaj ta strona jest dla Ciebie!
-        button.btn(type='button', class='btn_third') A MOZE JEDNAK?
+      div(class='col-sm-3')
+      div(class='col-sm-6')
+        h1 UX BLOGI to zbiór najlepszych blogów UX.
+        h4 Dzięki poziomom i zasadom gamifikacji stematyczność w zagłębianiu wiedzy nie będzie dla Ciebie problemem.
+        button.btn(type='button', class='btn_third') PRZEJDŹ DO BLOGÓW
+      div(class='col-sm-3')
 
   section(class='fourth') 
     div(class='row text-center')

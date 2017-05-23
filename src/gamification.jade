@@ -28,9 +28,13 @@ html(lang="en")
         div(class='col-sm-1')
           a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
-        div(class='col-sm-11')
+        div(class='col-sm-9')
           h1 Witaj w świecie UX <span id='userNameField'> </span> !
-          h2 Twój kod progresu to: <input type='text' id='showCode'>
+          h4 Twój kod progresu to: <input type='text' id='showCode' class='input_text'>
+        div(class='col-sm-2')
+          a(class='fa fa-user new_user' href="" )
+          p(class="text_user" href="" ) NOWY UZYTKOWNIK
+
 
     div(class='popup' id='askNamePu') 
       div(class='row text-center')
@@ -57,7 +61,7 @@ html(lang="en")
     div(class='popup' id='failurePu') 
       div(class='row text-center')
         div(class='col-sm-3')
-          img(src='img/icon3.png', alt='icon first' class='icon_popup')
+          img(src='img/icon5.png', alt='icon first' class='icon_popup')
         div(class='col-sm-6 text_gratulation')
           h1(style='color:#2F1B41;font-size:24px') Niestety, zła odpowiedź.
           p(style='color:#2F1B41;') Rozwaz przeczytanie artykułu raz jeszcze.
@@ -155,14 +159,14 @@ html(lang="en")
                             i(class='fa fa-check-circle')
                             p PROCES UX
                             div(class='btn_gamification')
-                              button.btn(type='button' class='gam_btn' onclick="window.open('http://www.uxbox.sk/?en#Understand'')") Czytaj
+                              button.btn(type='button' class='gam_btn' onclick="window.open('http://www.uxbox.sk/?en#Understand")") Czytaj
                               button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
                           div(class='blog font-awes2' id='id-6')
                             i(class='fa fa-check-circle')
                             p SZCZEGÓŁOWY PROCES UX 
                             div(class='btn_gamification')
-                              button.btn(type='button' class='gam_btn' onclick="window.open('http://uxchecklist.github.io/)") Czytaj
+                              button.btn(type='button' class='gam_btn' onclick="window.open('http://uxchecklist.github.io/')") Czytaj
                               button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
                           div(class='blog font-awes2' id='id-7')
@@ -241,7 +245,7 @@ html(lang="en")
                             i(class='fa fa-check-circle')
                             p ORGANIZACJA AI
                             div(class='btn_gamification')
-                              button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usability.gov/how-to-and-tools/methods/organization-schemes.html)") Czytaj
+                              button.btn(type='button' class='gam_btn' onclick="window.open('https://www.usability.gov/how-to-and-tools/methods/organization-schemes.html')") Czytaj
                               button.btn(type='button' class='gam_btn2' onclick='askQuestion(this)') Pytanie
                         div(class='col-sm-3')
                           div(class='blog font-awes2' id='id-16')
@@ -428,30 +432,30 @@ html(lang="en")
           h4 informatyka zaoczne 
   
   section(id='questions' visibility='collapse')
-    h6(id="q1") Lubisz placki?//1
-    h6(id="q2") Lubisz konie?//1
-    h6(id="q3") Lubisz koty?//1
-    h6(id="q4") Lubisz piwo?//1
-    h6(id="q5") Lubisz placki?//1
-    h6(id="q6") Lubisz placki?//1
-    h6(id="q7") Lubisz placki?//1
-    h6(id="q8") Lubisz placki?//1
-    h6(id="q9") Lubisz placki?//1
-    h6(id="q10") Lubisz placki?//1
-    h6(id="q11") Lubisz placki?//1
-    h6(id="q12") Lubisz placki?//1
-    h6(id="q13") Lubisz placki?//1
-    h6(id="q14") Lubisz placki?//1
-    h6(id="q15") Lubisz placki?//1
-    h6(id="q16") Lubisz placki?//1
-    h6(id="q17") Lubisz placki?//1
-    h6(id="q18") Lubisz placki?//1
-    h6(id="q19") Lubisz placki?//1
-    h6(id="q20") Lubisz placki?//1
-    h6(id="q21") Lubisz placki?//1
-    h6(id="q22") Lubisz placki?//1
-    h6(id="q23") Lubisz placki?//1
-    h6(id="q24") Lubisz placki?//1
+    h6(id="q1") Czy UX i Usability to jest to samo?//0
+    h6(id="q2") Czy dbanie o branding wizualny to rola UX Designera?//0
+    h6(id="q3") Czy Hotjar to narzędzie UX Designera?//1
+    h6(id="q4") Czy prawdziwe jest stwierdzenie: "Satisfaction — czy użytkownicy lubią używać serwisu?"?//1
+    h6(id="q5") Czy tworzenie person to część "Reaserch'u"?//0
+    h6(id="q6") Czy user flow to jeden z końcowych etapów procesu UX??//0
+    h6(id="q7") UXPin to program do tworzenia min. prototypów.//1
+    h6(id="q8") Czy Nielsen Norman Group robią też kursy dla zaawansowanych UXowców?//1
+    h6(id="q9") Czy klient powinien brać udział w brainstorming'u ?//1
+    h6(id="q10") Czy persona powinna być wyidealizowana?//0
+    h6(id="q11") Scieżka użytkownika bazuje na obserwacji doświadczenia użytkowników//1
+    h6(id="q12") Sortowanie kart pomaga w stworzeniu hierarchii informatcji//1
+    h6(id="q13") Kolejność nie jest tak istotna jak hierarchia w architekturze informacji.//0
+    h6(id="q14") "Sekwencyjna struktura" wymusza ścieżkę użytkownika krok- po- kroku//1
+    h6(id="q15") Schematy tematyczne organizują treści w oparciu o konkretny temat.//1
+    h6(id="q16") Audyty są używane często do sprawdzenia jakie strony usunąć//1
+    h6(id="q17") Czy makiety poprawnie jest rysować odręcznie?//1
+    h6(id="q18") Czy prototyp tworzy interakcje z interfejsem?//1
+    h6(id="q19") Szkielety programów powinny być jak najbardziej starannie wykonane.//0
+    h6(id="q20") Program Balsamiq służy do tworzenia wysokiej jakości prototypów.//0
+    h6(id="q21") Czy można stworzyć stronę dla osoby niewidomej?//1
+    h6(id="q22") Czy dzwięk uzupełnia wrażenia 3D w tworzeniu VR?//1
+    h6(id="q23") Czy teleportacja jest istotną częścią w VR?//1
+    h6(id="q24") Czy 30 stopni szerokości to maksymalne pole widzenianczłowieka?//0
 
 
   //- Latest compiled and minified JavaScript
