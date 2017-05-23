@@ -3,8 +3,7 @@
         document.getElementById("successPu").style.visibility = "hidden";
         document.getElementById("failurePu").style.visibility = "hidden"; 
         document.getElementById("questionPu").style.visibility = "hidden"; 
-        document.getElementById("informPu").style.visibility = "hidden"; 
-
+    
     window.onload = function() {
         //setCookie("progCode", "600000-000000", 10);
         //setCookie("userName", "Andrzej", 10);
@@ -77,13 +76,6 @@
             exUsersArr = exUsers.split("//");
             var exist = 0;
             var pos = 999;
-            informPopup = document.getElementById("informPu");
-            userNameInput = document.getElementById("userNameField2");
-            if (userNameInput !== null) {
-                    userNameInput.innerHTML = userName;
-            }
-            var messageInput = document.getElementById('messageInform');
-            var message = "";
             for (i=0; i<exUsersArr.length; i++) {
                 if (exUsersArr[i] == userName) {
                     exist = 1;
@@ -93,22 +85,18 @@
             if (exist === 1) {
                 //exUsersArr.Splice(pos + 1,1);
                 progCode = exUsersArr[pos + 1];
-                //alert("Nowy uzytkownik znaleziony na pozycji: " + pos + "! Czytam prog code: " + exUsersArr[pos + 1] + " dla uzytkownika: " + exUsersArr[pos]);
+                alert("Nowy uzytkownik znaleziony na pozycji: " + pos + "! Czytam prog code: " + exUsersArr[pos + 1] + " dla uzytkownika: " + exUsersArr[pos]);
                 setCookie("progCode", progCode, 10);
-                message = "Witaj ponownie " + userName + "! Miło cię znów widziec. Wczytaliśmy Twoje osiągnięcia abyś mógł kontynuowac poszerzanie swojej wiedzy tam gdzie skonczyłeś ostatnio.";
-                messageInput.innerHTML = message;
+                //HELLO popup / old user
             } else {
-                // alert("Nowy uzytkownik nie znaleziony - nowy uzytkownik serwisu");
+                alert("Nowy uzytkownik nie znaleziony - nowy uzytkownik serwisu");
                 setCookie("progCode", "000000-000000", 10);
-                message = "Witaj " + userName + "! Miło nam cię poznac. //Krótka instrukcja.//";
-                messageInput.innerHTML = message;
+                //HELLO popup / new user
             }
-        informPopup.style.visibility = "visible";
         } 
     }
     //REMEMBER USER
     function rememberUser(userName, progCode) {
-        document.getElementById('messageAskName').innerHTML = "";
         //setCookie("users", "" , 10); //CLEANER
         //alert(userName + ' ' + progCode);
         var exUsersArr;
@@ -170,9 +158,8 @@
             //setCookie("progCode", oldProgCode, 10);
         }
         if (oldUserName === userName) {
-            message = ("Hej " + userName + "! Znamy juz Twoj nick, nie musisz podawac go ponownie :) \nJezeli jednak po raz pierwszy odwiedzasz ta strone, to prawdopodobnie ktos o tym samym nick'u uzywal jej przed Toba na tym komputerze. Prosimy, wybierz inny nick.");
+            message = ("Hello " + userName + "! We already know Your nickname, so You don't have to submit it again :) \nIf however you did not use our site yet, that seems that someone with the same nickname did. Please choose another name.");
             document.getElementById('messageAskName').innerHTML = message;
-            // document.getElementById('okButton').innerHTML = "JASNE!";
         } else {
             //message = ("You have sumbitted name: " + userName + ". Someone called: " + oldUserName + " was using our website before. \nDo you want to switch from user: "+ oldUserName + " to: "+ userName + " ?");
             //document.getElementById('messageAskName').innerHTML = message;
@@ -181,9 +168,8 @@
             progCode = loadUser(userName);           //check and load new user
             setCookie("userName", userName, 10);
             //setCookie("progCode", progCode, 10);
-            document.getElementById('askNamePu').style.visibility = "hidden";
         }
-        
+        document.getElementById('askNamePu').style.visibility = "hidden";
         fillFields();
         configureSite();
         countPoints();
@@ -295,7 +281,6 @@
             //document.getElementById("showBinCode").value = binProgCode;
             document.getElementById("showCode").value = progCode;
             document.getElementById("userNameField").innerHTML = userName;
-            
         }
     }
 
@@ -330,9 +315,9 @@
         document.getElementById("questionText").innerHTML = question;
     }
 
-    function askForName(clickedButton) {
+    function askForName() {
         var userName = getCookie("userName");
-        if (userName === "" || clickedButton === 1) {
+        if (userName === "") {
             document.getElementById("askNamePu").style.visibility = "visible";
         } else {
 
@@ -411,10 +396,9 @@
             styledRating = document.getElementById("rat-" + (i/4+1).toString());
             if (styledRating !== null) {
                 styledRating.style.height = stagePer.toString() + "px";
-            
-                stagePer = userProgress / 4 * 100;
-                styledRating.children[0].innerHTML = stagePer.toString() + "%";
             }
+            stagePer = userProgress / 4 * 100;
+            styledRating.children[0].innerHTML = stagePer.toString() + "%";
             userProgress = 0;
             i = i + 3;
         }

@@ -96,7 +96,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   // Load the plugin that provides jshint
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  // Load the plugin that provides uglification of js
+  // // Load the plugin that provides uglification of js
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).

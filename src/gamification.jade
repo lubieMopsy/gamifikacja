@@ -25,14 +25,14 @@ html(lang="en")
   body
     section(class='header') 
       div(class='row text-center')
-        div(class='col-sm-1')
+        div(class='col-sm-2')
           a(class='fa fa-graduation-cap logo' href="index.html" )
           p UX BLOGI
-        div(class='col-sm-11')
-          h1 Witaj w świecie UX <span id='userNameField'> </span>!
+        div(class='col-sm-8')
+          h1 Witaj w świecie UX <span id='userNameField'></span>!
           h2 Twój kod progresu to: <input type='text' id='showCode'>
-          h2 Zmień uzytkownika
-          button(type='btn button' class='gam_btn' onclick='askForName()') ZACZYNAMY!
+        div(class='col-sm-2')
+          button(type='btn button' class='gam_btn' onclick='askForName(1)') Zmień uztkownika
 
     div(class='popup' id='askNamePu') 
       div(class='row text-center')
@@ -41,13 +41,25 @@ html(lang="en")
           .form-group
             label(for='usr' class='popup_text') Podaj swój nick:
             input.form-control(type='text' class='input' id='userNameInput')
-            button.btn(type='button' class='gam_btn' onclick='readUserName()') ZACZYNAMY!
+            button.btn(type='button' class='gam_btn' onclick='readUserName()' id='okButton') ZACZYNAMY!
         div(class='col-sm-3')
           i(class=' fa fa-close close' onclick='closePopupX(this)')
       div(class='row')
         div(class='col-sm-offset-1 col-sm-10')
-          p(id='messageAskName')
+          p(id='messageAskName' style='color: black;')
 
+    div(class='popup' id='informPu') 
+      div(class='row text-center')
+        div(class='col-sm-3')
+        div(class='col-sm-6')
+        div(class='col-sm-3')
+          i(class=' fa fa-close close' onclick='closePopupX(this)')
+      div(class='row')
+        div(class='col-sm-offset-1 col-sm-10')
+          p(id='messageInform' style='color: black;')
+      div(class='row')
+        div(class='col-sm-offset-4 col-sm-4')
+          button.btn(type='button' class='gam_btn' onclick='closePopupX(this)' id='okButton') OK, JASNE!
 
     div(class='popup' id='successPu') 
       div(class='row text-center')
@@ -87,8 +99,8 @@ html(lang="en")
 
     section(class='firstG') 
       div(class='row text-center')
-        div(class='col-sm-1')
-        div(class='col-sm-10')
+        //- div(class='col-sm-1')
+        div(class='col-sm-offset-1 col-sm-10')
           div(class='row text-center')
             div(class='col-sm-2 gifts' id='icon-1')
              i(class=' fa fa-hand-rock-o')
@@ -108,7 +120,8 @@ html(lang="en")
             div(class='col-sm-2 gifts' id='icon-6')
               i(class='fa fa-diamond')
               h4 UX MASTER
-        div(class='col-sm-1')
+        //- div(class='col-sm-1')
+      
       div(class='space title')
         .tab-wrap
           input#tab1(type='radio', name='tabs', checked='')
@@ -463,3 +476,4 @@ html(lang="en")
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
   //- custom JS
   script(src="project.min.js")
+  //- script(src="../customScript.js")
